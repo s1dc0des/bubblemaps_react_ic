@@ -47,3 +47,100 @@
 .mySelect {
   background-color: greenyellow;
 }
+
+.theme-background-overlay {
+  min-width: 100%;
+  min-height: 100%;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.mdc-typography {
+  color: #fff;
+  color: var(--text-color, #fff);
+}
+
+
+.bubblemaps-mdc {
+  min-height: 100vh;
+  margin: 0;
+  color: #fff;
+  background: #090015;
+  background: linear-gradient(90deg, #090015, #130a1f, #090015);
+}
+
+
+.mdc-typography {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: Montserrat, sans-serif;
+  font-family: var(--mdc-typography-font-family, Montserrat, sans-serif);
+}
+
+.page-container-with-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+.mdc-layout-grid__inner {
+  margin-bottom: 40px;
+  display: grid;
+  margin: 0;
+  grid-gap: 16px;
+  grid-gap: var(--mdc-layout-grid-gutter-tablet, 16px);
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  margin: -8px;
+  margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2* -1);
+}
+
+.mdc-layout-grid__cell {
+  width: calc(50% - 16px);
+  width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px));
+  box-sizing: border-box;
+  margin: 8px;
+  margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2);
+}
+
+.mdc-layout-grid__cell {
+  width: auto;
+  grid-column-end: span 4;
+  margin: 0;
+}
+
+.mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {
+  width: calc(100% - 16px);
+  width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px));
+}
+
+.mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {
+  width: auto;
+  grid-column-end: span 8;
+}
+
+.mdc-layout-grid__cell--span-12 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.mdc-layout-grid {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 32px;
+  padding: var(--mdc-layout-grid-margin-tablet, 32px);
+  max-width: 1500px;
+}
+
+.bubblemaps-mdc .mdc-layout-grid {
+  padding-top: 84px;
+  margin-bottom: 64px;
+  width: 100%;
+  padding-bottom: 0;
+}
