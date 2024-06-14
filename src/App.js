@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './index.css';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
@@ -9,6 +9,7 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import Stack from '@mui/material/Stack';
 import Verified from '@mui/icons-material/Verified';
+import { EmojiEvents, WatchLater } from '@mui/icons-material';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -18,6 +19,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Chip from '@mui/material/Chip';
+import { config } from './config.js';
+import Token from './Token.js';
 
 function App() {
 
@@ -129,16 +132,26 @@ function App() {
                 </Search>
                 <Button variant="contained" style={{marginLeft: "20px"}}>Learn More</Button>
               </div>
-              <div className='token-box'>
-                <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-3-desktop token-box" style={{boxShadow: "rgba(24, 212, 160, 0.2) 0px 0px 24px", border: "1px solid rgba(24, 212, 160, 0.2)", marginRight: "20px"}}>
+              <div className='token-box-container'>
+                <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-3-desktop token-box" style={{boxShadow: "rgba(24, 212, 160, 0.2) 0px 0px 24px", border: "1px solid rgba(24, 212, 160, 0.2)"}}>
                   <a href="/sol/token/85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ" className="token-box__router">
                     <img alt="" src="https://storage.googleapis.com/public-bubblemaps/app/tokens-images/26e40b83-37de-4b7f-9198-4047e1306d60" className="token-box__image" style={{width: "70px", height: "70px"}}/>
-                    <span class="token-box__text">Wormhole</span>
+                    <span className="token-box__text" style={{color: "white"}}>Wormhole</span>
                   </a>
                   <div className="token-box__links">
-                    <a href="https://wormhole.com/" target="_blank" rel="noreferrer">
+                    <a href="https://wormhole.com/" target="_blank" rel="noreferrer" style={{width: "30px", marginRight: "5px"}}>
+                      {/* <h6>Wormhole</h6> */}
                       <svg viewBox="0 0 24 24">
-                        <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0ZM2.4 12c0-.732.096-1.452.252-2.136L8.388 15.6v1.2c0 1.32 1.08 2.4 2.4 2.4v2.316C6.072 20.916 2.4 16.884 2.4 12Zm16.668 6.48c-.312-.972-1.2-1.68-2.28-1.68h-1.2v-3.6c0-.66-.54-1.2-1.2-1.2h-7.2V9.6h2.4c.66 0 1.2-.54 1.2-1.2V6h2.4c1.32 0 2.4-1.08 2.4-2.4v-.492C19.104 4.524 21.6 7.98 21.6 12c0 2.496-.972 4.776-2.532 6.48Z">
+                        <path d={config.pathD}>
+                        </path>
+                      </svg>
+                    </a>
+
+                    <a href="https://solscan.io/token/85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ" target="_blank" rel="noreferrer" style={{width: "30px", marginLeft: "5px"}}>
+                      {/* <h6>Wormhole</h6> */}
+                      <svg viewBox="0 0 525.916 525.916">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d={config.pathSolScan1}></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d={config.pathSolScan2}>
                         </path>
                       </svg>
                     </a>
@@ -148,12 +161,22 @@ function App() {
                 <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-3-desktop token-box" style={{boxShadow: "rgba(24, 212, 160, 0.2) 0px 0px 24px", border: "1px solid rgba(24, 212, 160, 0.2)", marginLeft: "20px"}}>
                   <a href="/sol/token/85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ" className="token-box__router">
                     <img alt="" src="https://storage.googleapis.com/public-bubblemaps/app/tokens-images/26e40b83-37de-4b7f-9198-4047e1306d60" className="token-box__image" style={{width: "70px", height: "70px"}}/>
-                    <span class="token-box__text">Wormhole</span>
+                    <span className="token-box__text">Wormhole</span>
                   </a>
                   <div className="token-box__links">
-                    <a href="https://wormhole.com/" target="_blank" rel="noreferrer">
+                    <a href="https://wormhole.com/" target="_blank" rel="noreferrer" style={{width: "30px", marginRight: "5px"}}>
+                      {/* <h6>Wormhole</h6> */}
                       <svg viewBox="0 0 24 24">
-                        <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0ZM2.4 12c0-.732.096-1.452.252-2.136L8.388 15.6v1.2c0 1.32 1.08 2.4 2.4 2.4v2.316C6.072 20.916 2.4 16.884 2.4 12Zm16.668 6.48c-.312-.972-1.2-1.68-2.28-1.68h-1.2v-3.6c0-.66-.54-1.2-1.2-1.2h-7.2V9.6h2.4c.66 0 1.2-.54 1.2-1.2V6h2.4c1.32 0 2.4-1.08 2.4-2.4v-.492C19.104 4.524 21.6 7.98 21.6 12c0 2.496-.972 4.776-2.532 6.48Z">
+                        <path d={config.pathD}>
+                        </path>
+                      </svg>
+                    </a>
+
+                    <a href="https://solscan.io/token/85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ" target="_blank" rel="noreferrer" style={{width: "30px", marginLeft: "5px"}}>
+                      {/* <h6>Wormhole</h6> */}
+                      <svg viewBox="0 0 525.916 525.916">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d={config.pathSolScan1}></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d={config.pathSolScan2}>
                         </path>
                       </svg>
                     </a>
@@ -163,12 +186,22 @@ function App() {
                 <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-3-desktop token-box" style={{boxShadow: "rgba(24, 212, 160, 0.2) 0px 0px 24px", border: "1px solid rgba(24, 212, 160, 0.2)", marginLeft: "20px"}}>
                   <a href="/sol/token/85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ" className="token-box__router">
                     <img alt="" src="https://storage.googleapis.com/public-bubblemaps/app/tokens-images/26e40b83-37de-4b7f-9198-4047e1306d60" className="token-box__image" style={{width: "70px", height: "70px"}}/>
-                    <span class="token-box__text">Wormhole</span>
+                    <span className="token-box__text">Wormhole</span>
                   </a>
                   <div className="token-box__links">
-                    <a href="https://wormhole.com/" target="_blank" rel="noreferrer">
+                    <a href="https://wormhole.com/" target="_blank" rel="noreferrer" style={{width: "30px", marginRight: "5px"}}>
+                      {/* <h6>Wormhole</h6> */}
                       <svg viewBox="0 0 24 24">
-                        <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0ZM2.4 12c0-.732.096-1.452.252-2.136L8.388 15.6v1.2c0 1.32 1.08 2.4 2.4 2.4v2.316C6.072 20.916 2.4 16.884 2.4 12Zm16.668 6.48c-.312-.972-1.2-1.68-2.28-1.68h-1.2v-3.6c0-.66-.54-1.2-1.2-1.2h-7.2V9.6h2.4c.66 0 1.2-.54 1.2-1.2V6h2.4c1.32 0 2.4-1.08 2.4-2.4v-.492C19.104 4.524 21.6 7.98 21.6 12c0 2.496-.972 4.776-2.532 6.48Z">
+                        <path d={config.pathD}>
+                        </path>
+                      </svg>
+                    </a>
+
+                    <a href="https://solscan.io/token/85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ" target="_blank" rel="noreferrer" style={{width: "30px", marginLeft: "5px"}}>
+                      {/* <h6>Wormhole</h6> */}
+                      <svg viewBox="0 0 525.916 525.916">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d={config.pathSolScan1}></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d={config.pathSolScan2}>
                         </path>
                       </svg>
                     </a>
@@ -178,17 +211,45 @@ function App() {
                 <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-3-desktop token-box" style={{boxShadow: "rgba(24, 212, 160, 0.2) 0px 0px 24px", border: "1px solid rgba(24, 212, 160, 0.2)", marginLeft: "20px"}}>
                   <a href="/sol/token/85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ" className="token-box__router">
                     <img alt="" src="https://storage.googleapis.com/public-bubblemaps/app/tokens-images/26e40b83-37de-4b7f-9198-4047e1306d60" className="token-box__image" style={{width: "70px", height: "70px"}}/>
-                    <span class="token-box__text">Wormhole</span>
+                    <span className="token-box__text">Wormhole</span>
                   </a>
                   <div className="token-box__links">
-                    <a href="https://wormhole.com/" target="_blank" rel="noreferrer">
+                    <a href="https://wormhole.com/" target="_blank" rel="noreferrer" style={{width: "30px", marginRight: "5px"}}>
+                      {/* <h6>Wormhole</h6> */}
                       <svg viewBox="0 0 24 24">
-                        <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0ZM2.4 12c0-.732.096-1.452.252-2.136L8.388 15.6v1.2c0 1.32 1.08 2.4 2.4 2.4v2.316C6.072 20.916 2.4 16.884 2.4 12Zm16.668 6.48c-.312-.972-1.2-1.68-2.28-1.68h-1.2v-3.6c0-.66-.54-1.2-1.2-1.2h-7.2V9.6h2.4c.66 0 1.2-.54 1.2-1.2V6h2.4c1.32 0 2.4-1.08 2.4-2.4v-.492C19.104 4.524 21.6 7.98 21.6 12c0 2.496-.972 4.776-2.532 6.48Z">
+                        <path d={config.pathD}>
+                        </path>
+                      </svg>
+                    </a>
+
+                    <a href="https://solscan.io/token/85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ" target="_blank" rel="noreferrer" style={{width: "30px", marginLeft: "5px"}}>
+                      {/* <h6>Wormhole</h6> */}
+                      <svg viewBox="0 0 525.916 525.916">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d={config.pathSolScan1}></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d={config.pathSolScan2}>
                         </path>
                       </svg>
                     </a>
                   </div>
                 </div>
+              </div>
+
+              <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-6-desktop home-section" >
+                <div className="home-section__title" >
+                  {/* <span className="material-icons" >emoji_events</span> */}
+                  <EmojiEvents style={{color: "yellow"}}/>
+                  Most Visited 
+                </div>
+                <Token />
+              </div>
+
+              <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-6-desktop home-section">
+                <div className="home-section__title" >
+                  {/* <span className="material-icons" >watch_later</span> Recently Listed  */}
+                  <WatchLater style={{color: "blue"}}/>
+                  Recently Listed
+                </div>
+                <Token />
               </div>
             </div>
             </div>
