@@ -9,10 +9,19 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import Stack from '@mui/material/Stack';
 import Verified from '@mui/icons-material/Verified';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
+import Chip from '@mui/material/Chip';
 
 function App() {
 
-  const [selectedValue, setSelectedValue] = useState('');
+  const [selectedValue, setSelectedValue] = useState('SOL');
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
@@ -60,6 +69,17 @@ function App() {
     },
   }));
 
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+
+  const handleClick = () => {
+    console.info('You clicked the Chip.');
+  }
   return (
     <div className="mdc-typography bubblemaps-mdc">
       <div className="theme-background-overlay">Bubblemaps
@@ -69,10 +89,10 @@ function App() {
               <a href="/sol/" className="router-link-active router-link-exact-active mdc-top-app-bar__logo-container" aria-current="page">
                 <img src="/img/bubblemaps.51902376.svg" alt="Bubblemaps Logo" className="mdc-top-app-bar__logo"/>
               </a>
-              <Select value={selectedValue} onChange={handleChange} className='mySelect'>SOL
-                <MenuItem value={'option1'}>SOL</MenuItem>
-                <MenuItem value={'option2'}>ETH</MenuItem>
-                <MenuItem value={'option3'}>BTC</MenuItem>
+              <Select value={selectedValue} onChange={handleChange} className='select-chain'>SOL
+                <MenuItem value={'SOL'}>SOL</MenuItem>
+                <MenuItem value={'ETH'}>ETH</MenuItem>
+                <MenuItem value={'BTC'}>BTC</MenuItem>
               </Select>
             </section>
             <section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
@@ -89,7 +109,8 @@ function App() {
                   inputProps={{ 'aria-label': 'search' }}
                 />
               </Search>
-              <Button variant="contained">Login</Button>
+              {/* <Button variant="contained" style={{marginLeft: "10px"}}>Login</Button> */}
+              <Chip label="LOG IN" onClick={handleClick} style={{backgroundColor: "#de219a", marginLeft: "10px", height: "80%"}}/>
             </section>
           </div>
         </header>
@@ -106,9 +127,69 @@ function App() {
                     inputProps={{ 'aria-label': 'search' }}
                   />
                 </Search>
+                <Button variant="contained" style={{marginLeft: "20px"}}>Learn More</Button>
               </div>
-              <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">Two</div>
-              <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">Three</div>
+              <div className='token-box'>
+                <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-3-desktop token-box" style={{boxShadow: "rgba(24, 212, 160, 0.2) 0px 0px 24px", border: "1px solid rgba(24, 212, 160, 0.2)", marginRight: "20px"}}>
+                  <a href="/sol/token/85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ" className="token-box__router">
+                    <img alt="" src="https://storage.googleapis.com/public-bubblemaps/app/tokens-images/26e40b83-37de-4b7f-9198-4047e1306d60" className="token-box__image" style={{width: "70px", height: "70px"}}/>
+                    <span class="token-box__text">Wormhole</span>
+                  </a>
+                  <div className="token-box__links">
+                    <a href="https://wormhole.com/" target="_blank" rel="noreferrer">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0ZM2.4 12c0-.732.096-1.452.252-2.136L8.388 15.6v1.2c0 1.32 1.08 2.4 2.4 2.4v2.316C6.072 20.916 2.4 16.884 2.4 12Zm16.668 6.48c-.312-.972-1.2-1.68-2.28-1.68h-1.2v-3.6c0-.66-.54-1.2-1.2-1.2h-7.2V9.6h2.4c.66 0 1.2-.54 1.2-1.2V6h2.4c1.32 0 2.4-1.08 2.4-2.4v-.492C19.104 4.524 21.6 7.98 21.6 12c0 2.496-.972 4.776-2.532 6.48Z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-3-desktop token-box" style={{boxShadow: "rgba(24, 212, 160, 0.2) 0px 0px 24px", border: "1px solid rgba(24, 212, 160, 0.2)", marginLeft: "20px"}}>
+                  <a href="/sol/token/85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ" className="token-box__router">
+                    <img alt="" src="https://storage.googleapis.com/public-bubblemaps/app/tokens-images/26e40b83-37de-4b7f-9198-4047e1306d60" className="token-box__image" style={{width: "70px", height: "70px"}}/>
+                    <span class="token-box__text">Wormhole</span>
+                  </a>
+                  <div className="token-box__links">
+                    <a href="https://wormhole.com/" target="_blank" rel="noreferrer">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0ZM2.4 12c0-.732.096-1.452.252-2.136L8.388 15.6v1.2c0 1.32 1.08 2.4 2.4 2.4v2.316C6.072 20.916 2.4 16.884 2.4 12Zm16.668 6.48c-.312-.972-1.2-1.68-2.28-1.68h-1.2v-3.6c0-.66-.54-1.2-1.2-1.2h-7.2V9.6h2.4c.66 0 1.2-.54 1.2-1.2V6h2.4c1.32 0 2.4-1.08 2.4-2.4v-.492C19.104 4.524 21.6 7.98 21.6 12c0 2.496-.972 4.776-2.532 6.48Z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-3-desktop token-box" style={{boxShadow: "rgba(24, 212, 160, 0.2) 0px 0px 24px", border: "1px solid rgba(24, 212, 160, 0.2)", marginLeft: "20px"}}>
+                  <a href="/sol/token/85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ" className="token-box__router">
+                    <img alt="" src="https://storage.googleapis.com/public-bubblemaps/app/tokens-images/26e40b83-37de-4b7f-9198-4047e1306d60" className="token-box__image" style={{width: "70px", height: "70px"}}/>
+                    <span class="token-box__text">Wormhole</span>
+                  </a>
+                  <div className="token-box__links">
+                    <a href="https://wormhole.com/" target="_blank" rel="noreferrer">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0ZM2.4 12c0-.732.096-1.452.252-2.136L8.388 15.6v1.2c0 1.32 1.08 2.4 2.4 2.4v2.316C6.072 20.916 2.4 16.884 2.4 12Zm16.668 6.48c-.312-.972-1.2-1.68-2.28-1.68h-1.2v-3.6c0-.66-.54-1.2-1.2-1.2h-7.2V9.6h2.4c.66 0 1.2-.54 1.2-1.2V6h2.4c1.32 0 2.4-1.08 2.4-2.4v-.492C19.104 4.524 21.6 7.98 21.6 12c0 2.496-.972 4.776-2.532 6.48Z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-3-desktop token-box" style={{boxShadow: "rgba(24, 212, 160, 0.2) 0px 0px 24px", border: "1px solid rgba(24, 212, 160, 0.2)", marginLeft: "20px"}}>
+                  <a href="/sol/token/85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ" className="token-box__router">
+                    <img alt="" src="https://storage.googleapis.com/public-bubblemaps/app/tokens-images/26e40b83-37de-4b7f-9198-4047e1306d60" className="token-box__image" style={{width: "70px", height: "70px"}}/>
+                    <span class="token-box__text">Wormhole</span>
+                  </a>
+                  <div className="token-box__links">
+                    <a href="https://wormhole.com/" target="_blank" rel="noreferrer">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0ZM2.4 12c0-.732.096-1.452.252-2.136L8.388 15.6v1.2c0 1.32 1.08 2.4 2.4 2.4v2.316C6.072 20.916 2.4 16.884 2.4 12Zm16.668 6.48c-.312-.972-1.2-1.68-2.28-1.68h-1.2v-3.6c0-.66-.54-1.2-1.2-1.2h-7.2V9.6h2.4c.66 0 1.2-.54 1.2-1.2V6h2.4c1.32 0 2.4-1.08 2.4-2.4v-.492C19.104 4.524 21.6 7.98 21.6 12c0 2.496-.972 4.776-2.532 6.48Z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
             </div>
           </div>

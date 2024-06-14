@@ -84,20 +84,22 @@
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;
+  width: 100% !important;
 }
 
 .mdc-layout-grid__inner {
-  margin-bottom: 40px;
-  display: grid;
+  margin-top: 40px !important;
+  /* display: grid; */
   margin: 0;
-  grid-gap: 16px;
-  grid-gap: var(--mdc-layout-grid-gutter-tablet, 16px);
+  grid-gap: 20px;
+  grid-gap: var(--mdc-layout-grid-gutter-tablet, 20px);
   grid-template-columns: repeat(8, minmax(0, 1fr));
   display: flex;
   flex-flow: row wrap;
   align-items: stretch;
   margin: -8px;
-  margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2* -1);
+  margin: calc(var(--mdc-layout-grid-gutter-tablet, 20px) / 2* -1);
+  justify-content: center;
 }
 
 .mdc-layout-grid__cell {
@@ -112,6 +114,7 @@
   width: auto;
   grid-column-end: span 4;
   margin: 0;
+  display: flex !important;
 }
 
 .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {
@@ -125,9 +128,9 @@
 }
 
 .mdc-layout-grid__cell--span-12 {
-  display: flex;
+  display: flex !important;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 .mdc-layout-grid {
@@ -136,11 +139,62 @@
   padding: 32px;
   padding: var(--mdc-layout-grid-margin-tablet, 32px);
   max-width: 1500px;
+  width: 100% !important;
 }
 
 .bubblemaps-mdc .mdc-layout-grid {
-  padding-top: 84px;
+  padding-top: 104px;
   margin-bottom: 64px;
   width: 100%;
   padding-bottom: 0;
+}
+.select-chain{
+  background-color: #61dafb;
+  margin-left: 10px;
+  width: 100px;
+  border-top-left-radius: 18px !important;
+    border-top-right-radius: 18px !important;
+    border-bottom-right-radius: 18px !important;
+    border-bottom-left-radius: 18px !important;
+}
+
+.token-box .token-box__router{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  transition: transform .25s;
+}
+
+.token-box {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  height: 190px;
+  border-radius: 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background: url(https://storage.googleapis.com/public-moonlight/token-background.svg) 50%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.token-box__router:hover {
+  transform: translateY(-10px);
+}
+
+.token-box .token-box__text{
+  padding: 8px;
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+
+.token-box .token-box__links{
+  display: flex;
+  align-items: center;
 }
